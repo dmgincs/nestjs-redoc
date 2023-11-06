@@ -160,6 +160,7 @@ Bellow are a list of changes, some might go undocumented
 - 2.1.1 - Fixed CSP issue on Safari browser
 - 2.2.0 - Added version property, this way you can pin redoc to a specific version
 - 2.2.2 - Updated to support Nest 8
+- 2.2.3 - Updated to support Nest 9 & added support for "Try It Console"
 
 ## 📋 ToDo
 

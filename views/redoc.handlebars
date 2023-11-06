@@ -19,24 +19,29 @@
       padding: 0;
     }
   </style>
+
+  <style>
+    {{{ data.css }}}
+  </style>
 </head>
 
 <body>
   <!-- we provide is specification here -->
   <div id="redoc_container"></div>
   <script src="https://cdn.jsdelivr.net/npm/redoc@{{data.redocVersion}}/bundles/redoc.standalone.js"> </script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/redoc-try-it-out/dist/try-it-out.min.js"></script>
   <script>
     let themeJSON = '{{{ toJSON data.theme }}}';
     if (themeJSON === '') { themeJSON = undefined }
-    Redoc.init(
+    RedocTryItOut.init(
       '{{ data.docUrl }}',
       {
+        ...JSON.parse('{{{ toJSON data.options }}}'),
         ...(themeJSON && {
           theme: {
             ...JSON.parse(themeJSON)
           }
-        }),
-        ...JSON.parse('{{{ toJSON data.options }}}')
+        })
       },
       document.getElementById("redoc_container")
     );

@@ -56,6 +56,9 @@ export interface RedocOptions {
 
   /** If set, group tags in categories in the side menu. Tags not added to a group will not be displayed. */
   tagGroups?: TagGroupOptions[];
+
+  /** Optional CSS to overwrite the default CSS with */
+  css?: string;
 }
 
 export interface LogoOptions {
